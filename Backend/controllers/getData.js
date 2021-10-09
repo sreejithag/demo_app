@@ -9,12 +9,14 @@ exports.getAllinfo = async (req,res,next)=>{
         if(allData){
 
             return res.status(200).json({
-                data : allData,
+                success:true,
+                data : allData
             })
 
         }else{
 
             return res.status(404).json({
+                success:false,
                 data : 'Not found'
             })
         }
@@ -32,6 +34,7 @@ exports.isUserExists = async (req,res,next)=>{
 
         if(!email){
             return res.status(400).json({
+                success:false,
                 data : 'Email required'
             })
         }
@@ -42,12 +45,14 @@ exports.isUserExists = async (req,res,next)=>{
 
         if(exists){
             return res.status(200).json({
+                success:true,
                 data : true
             })
         }
 
 
         return res.status(200).json({
+                success:true,
                 data : false
               })
 
@@ -66,12 +71,14 @@ exports.getDetails = async (req,res,next)=>{
         })
 
         if(!data){
-            return res.status(404).json({
+            return res.status(200).json({
+                success:false,
                 data : 'Not found'
             })
         }
 
         return res.status(200).json({
+            success:true,
             data:data
         })
 

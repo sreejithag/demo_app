@@ -8,7 +8,7 @@ import { ApiService } from '../api.service';
   styleUrls: ['./list-data.component.css']
 })
 export class ListDataComponent implements OnInit {
-  data:any;
+  data:any = [];
   constructor(
     private api:ApiService
     
@@ -17,11 +17,11 @@ export class ListDataComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.api.getAlldata().subscribe(data=>{
-     this.data=data;
-     alert(JSON.stringify(data))
-    })
+    this.api.getAlldata().subscribe((res:any)=>{
+      this.data = res.data;
+  })
 
   }
 
+  
 }
