@@ -13,8 +13,11 @@ app.use(cors());
 app.use("/api/v1/add", addRoute);
 app.use("/api/v1/get", getRoute);
 
-app.use('/', express.static('./static'));
-
+app.use(express.static('./static'));
+app.use('*', (req, res) => 
+{
+  res.sendFile(__dirname +'/static/index.html');
+});
 
 
 
