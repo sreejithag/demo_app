@@ -25,6 +25,7 @@ exports.add = async (req,res,next)=>{
 
      if(isUserExists){
         return res.status(400).json({
+            success:false,
             data: 'User already exists'
         })
      }
@@ -44,6 +45,7 @@ exports.add = async (req,res,next)=>{
 
      if(savedData){
          return res.status(200).json({
+             success:true,
              data:savedData
          })
      }else{

@@ -1,0 +1,23 @@
+<nav class="navbar " >
+    <a class="navbar-brand" href="/" style="color: black;">
+        <b>Add new</b>
+    </a>
+  
+    <a class="navbar-brand" href="/list" style="color: black;">
+      <b>List all</b>
+  </a>
+  </nav>
+
+  <div class="container">
+    
+      <div class="form-group" *ngFor="let d of data">
+         <div>
+        <span>Name: </span>
+          <a href="/details/{{d.email}}">{{d.firstname}}</a>
+
+          <span> email: {{d.lastname}} {{d.email}} </span>
+            
+          </div>
+      </div>
+
+  </div>
