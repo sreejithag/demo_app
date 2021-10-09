@@ -13,9 +13,7 @@ app.use(cors());
 app.use("/api/v1/add", addRoute);
 app.use("/api/v1/get", getRoute);
 
-app.get("/", (req, res) => {
-    res.send("Info api works");
-});
+app.use('/', express.static('./static'));
 
 
 
